@@ -3,8 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.course.java.se</groupId>
-    <artifactId>unit10servlet</artifactId>
-    <name>unit10servlet Maven Webapp</name>
+    <artifactId>drive_club</artifactId>
+    <name>drive_club Maven Webapp</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -34,47 +34,26 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-api</artifactId>
-            <version>8.0.32</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jsp-api</artifactId>
-            <version>8.0.32</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>6.0.47</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>servlet-api</artifactId>
             <version>3.0-alpha-1</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>unit10servlet</finalName>
         <plugins>
             <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
-                <configuration>
-                    <!-- See https://www.mkyong.com/maven/how-to-deploy-maven-based-war-file-to-tomcat/ -->
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>TomcatUnit10</server>
-                    <path>/mvndepl</path>
-                </configuration>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.11.v20150529</version>
             </plugin>
         </plugins>
     </build>
-
 
 </project>
