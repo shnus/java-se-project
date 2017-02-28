@@ -17,6 +17,8 @@ public class User implements Principal {
     String firstName;
     String lastName;
     Date birthDate;
+    String loginName;
+    String passwordHash;
 
     public String getName() {
         return firstName+" "+lastName;

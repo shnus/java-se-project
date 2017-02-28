@@ -38,8 +38,8 @@
             <ul class="nav navbar-nav">
                 <c:url var="newsPage" value="/news"/>
                 <li><a href="${newsPage}"><fmt:message bundle="${home}" key="home.news"/></a></li>
-                <c:url var="newsPage" value="/"/>
-                <li><a href="#"><fmt:message bundle="${home}" key="home.my.page"/></a></li>
+                <c:url var="myPage" value="/myPage"/>
+                <li><a href="${myPage}"><fmt:message bundle="${home}" key="home.my.page"/></a></li>
             </ul>
             <c:url var="localePage" value="/locale"/>
             <c:set var="currentUrl" value="${requestScope['javax.servlet.forward.request_uri']}?${pageContext.request.queryString}"/>
