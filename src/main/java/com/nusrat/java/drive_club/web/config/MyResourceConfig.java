@@ -12,9 +12,10 @@ import javax.ws.rs.ApplicationPath;
 @ApplicationPath("/")
 public class MyResourceConfig extends ResourceConfig {
     public MyResourceConfig() {
-        packages("com.nusrat.java.drive_club.web");
+        packages("com.nusrat.java.drive_club");
         register(LoggingFilter.class);
         register(JspMvcFeature.class);
+       // register(MyApplicationBinder.class);
         property("jersey.config.server.mvc.templateBasePath.jsp", "/WEB-INF/jsp");
         property("jersey.config.server.provider.classnames", "org.glassfish.jersey.server.mvc.jsp.JspMvcFeature");
         property("jersey.config.server.tracing", "ALL");

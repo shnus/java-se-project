@@ -10,7 +10,7 @@
         <filter-class>org.glassfish.jersey.servlet.ServletContainer</filter-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.nusrat.java.drive_club.web</param-value>
+            <param-value>com.nusrat.java.drive_club</param-value>
         </init-param>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
@@ -23,7 +23,20 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
-    
-   
+
+
+    <listener>
+        <listener-class>com.nusrat.java.drive_club.web.listener.MyJerseyGuiceServletContextListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>guiceFilter</filter-name>
+        <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>guiceFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

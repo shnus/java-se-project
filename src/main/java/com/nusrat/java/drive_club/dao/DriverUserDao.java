@@ -2,18 +2,24 @@ package com.nusrat.java.drive_club.dao;
 
 import com.nusrat.java.drive_club.model.User;
 import com.nusrat.java.drive_club.service.DriverSecurityService;
+import org.jvnet.hk2.annotations.Service;
 
+import javax.annotation.ManagedBean;
+import javax.inject.Inject;
 import java.util.Date;
 import java.util.Optional;
 
 /**
  * Created by Nusrat on 2/25/2017.
  */
+@ManagedBean
+@Service
 public class DriverUserDao implements UserDao {
 
-    DriverSecurityService securityService;
+    final DriverSecurityService securityService;
 
-    public DriverUserDao(DriverSecurityService securityService){
+    @Inject
+    public DriverUserDao(DriverSecurityService securityService) {
         this.securityService = securityService;
     }
 

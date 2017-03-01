@@ -5,16 +5,22 @@ import com.nusrat.java.drive_club.model.Credentials;
 import com.nusrat.java.drive_club.model.User;
 import com.nusrat.java.drive_club.service.interfaces.SecurityService;
 import com.nusrat.java.drive_club.service.interfaces.UserService;
+import org.jvnet.hk2.annotations.Service;
 
+import javax.inject.Inject;
 import java.util.Optional;
 
 /**
  * Created by Nusrat on 2/25/2017.
  */
+@Service
 public class DriverUserService implements UserService {
-    private final UserDao userDao;
-    private final SecurityService securityService;
 
+    final UserDao userDao;
+
+    final SecurityService securityService;
+
+    @Inject
     public DriverUserService(UserDao userDao, SecurityService securityService) {
         this.userDao = userDao;
         this.securityService = securityService;

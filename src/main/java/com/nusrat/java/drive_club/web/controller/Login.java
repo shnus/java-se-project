@@ -1,14 +1,14 @@
 package com.nusrat.java.drive_club.web.controller;
 
-import com.nusrat.java.drive_club.dao.DriverUserDao;
 import com.nusrat.java.drive_club.model.Credentials;
 import com.nusrat.java.drive_club.model.User;
-import com.nusrat.java.drive_club.service.DriverSecurityService;
-import com.nusrat.java.drive_club.service.DriverUserService;
 import com.nusrat.java.drive_club.service.Validation;
+import com.nusrat.java.drive_club.service.interfaces.SecurityService;
 import com.nusrat.java.drive_club.service.interfaces.UserService;
 import org.glassfish.jersey.server.mvc.Viewable;
 
+import javax.annotation.ManagedBean;
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ws.rs.*;
@@ -21,8 +21,10 @@ import java.util.Optional;
 /**
  * Created by Nusrat on 2/14/2017.
  */
+@ManagedBean
 @Path("/login")
 public class Login {
+
     @Context
     private HttpServletRequest servletRequest;
 
@@ -32,14 +34,21 @@ public class Login {
     @Context
     UriInfo uri;
 
+    @Inject
+    SecurityService securityService;
+
+    private final UserService userService;
+
+    @Inject
+    public Login(UserService userService) {
+        this.userService = userService;
+    }
 
     @GET
     @Produces(MediaType.TEXT_HTML)
     public Response loginPage() {
         return Response.ok(new Viewable("/login/index.jsp")).build();
     }
-
-    UserService userService = new DriverUserService(new DriverUserDao(new DriverSecurityService()), new DriverSecurityService());
 
     @POST
     public Response signIn(@FormParam("login") String login, @FormParam("password") String password){
