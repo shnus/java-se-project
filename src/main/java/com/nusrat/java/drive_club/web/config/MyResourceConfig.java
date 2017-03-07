@@ -4,6 +4,7 @@ package com.nusrat.java.drive_club.web.config;
  * Created by Nusrat on 2/14/2017.
  */
 import org.glassfish.jersey.filter.LoggingFilter;
+import org.glassfish.jersey.media.sse.SseFeature;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.server.mvc.jsp.JspMvcFeature;
 
@@ -15,6 +16,7 @@ public class MyResourceConfig extends ResourceConfig {
         packages("com.nusrat.java.drive_club");
         register(LoggingFilter.class);
         register(JspMvcFeature.class);
+        register(SseFeature.class);
        // register(MyApplicationBinder.class);
         property("jersey.config.server.mvc.templateBasePath.jsp", "/WEB-INF/jsp");
         property("jersey.config.server.provider.classnames", "org.glassfish.jersey.server.mvc.jsp.JspMvcFeature");

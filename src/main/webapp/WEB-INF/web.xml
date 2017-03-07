@@ -16,6 +16,7 @@
             <param-name>javax.ws.rs.Application</param-name>
             <param-value>com.nusrat.java.drive_club.web.config.MyResourceConfig</param-value>
         </init-param>
+        <async-supported>true</async-supported>
     </filter>
 
     <filter-mapping>
@@ -32,6 +33,7 @@
     <filter>
         <filter-name>guiceFilter</filter-name>
         <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+        <async-supported>true</async-supported>
     </filter>
 
     <filter-mapping>

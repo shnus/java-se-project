@@ -69,6 +69,7 @@ public class Login {
             servletRequest.getSession(true).setAttribute("isLogin",true);
         }
 
-        return Response.seeOther(uri.getBaseUri()).build();
+        return Response.ok(new Viewable("/broadcast/index.jsp")).build();
+       // return Response.seeOther(uri.getBaseUri()).build();
     }
 }
