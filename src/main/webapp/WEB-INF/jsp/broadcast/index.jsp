@@ -1,17 +1,50 @@
-<script type="text/javascript">
-    var url = "broadcast";
-    var source=new EventSource(url);
-    source.addEventListener(
-        "message",
-        function(event){
-            console.log(event.data);
-            document.getElementById("result").innerHTML+=event.data + "<br>"; },
-        false);
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<head>
+    <c:url var="jqui" value="/static/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="${jqui}" />
+
+    <c:url var="jquery" value="/static/js/jquery-3.1.1.min.js"/>
+    <script language="JavaScript" type="text/javascript" src="${jquery}"> </script>
+</head>
+
+<script>
+    $(document).ready(function() {
+        $("button").click(function () {
+            $.post("broadcast",
+                {
+                    name: "Donald Duck",
+                    city: "Duckburg"
+                },
+                function (data, status) {
+                    alert("Data: " + data.toString() + "\nStatus: " + status);
+                });
+        });
+    });
+
+    var obj = '{'
+        +'"input" : "Nusrat"'
+        +'}';
+
+    $.ajax({
+        type: "POST",
+        url: "broadcast",
+        dataType: "json",
+        contentType: "application/json",
+        data: obj,
+        success: window.alert("inside aJax statement")
+    });
+
 </script>
+<body>
 <div id="result">
-    <form action="broadcast" method="post" enctype="text/plain"  >
+
+    <form>
         <input  name="hui" placeholder="Put message here"/>
         <input  name="hui2" placeholder="Put message here"/>
         <input type="submit" value="OK"/>
     </form>
+
+    <button>Send an HTTP POST request to a page and get the result back</button>
+
 </div>
+</body>

@@ -10,7 +10,7 @@
         <filter-class>org.glassfish.jersey.servlet.ServletContainer</filter-class>
         <init-param>
             <param-name>jersey.config.server.provider.packages</param-name>
-            <param-value>com.nusrat.java.drive_club</param-value>
+            <param-value>com.nusrat.java.drive_club;org.glassfish.jersey.examples.jackson</param-value>
         </init-param>
         <init-param>
             <param-name>javax.ws.rs.Application</param-name>
