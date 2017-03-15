@@ -30,6 +30,11 @@
         <listener-class>com.nusrat.java.drive_club.web.listener.MyJerseyGuiceServletContextListener</listener-class>
     </listener>
 
+    <listener>
+        <listener-class>com.nusrat.java.drive_club.web.listener.InitServletContextLitener</listener-class>
+    </listener>
+
+
     <filter>
         <filter-name>guiceFilter</filter-name>
         <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>

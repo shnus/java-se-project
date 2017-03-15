@@ -3,7 +3,6 @@ package com.nusrat.java.drive_club.web.controller;
 import com.nusrat.java.drive_club.model.Credentials;
 import com.nusrat.java.drive_club.model.User;
 import com.nusrat.java.drive_club.service.Validation;
-import com.nusrat.java.drive_club.service.interfaces.SecurityService;
 import com.nusrat.java.drive_club.service.interfaces.UserService;
 import org.glassfish.jersey.server.mvc.Viewable;
 
@@ -23,7 +22,7 @@ import java.util.Optional;
  */
 @ManagedBean
 @Path("/login")
-public class Login {
+public class LoginResource {
 
     @Context
     private HttpServletRequest servletRequest;
@@ -34,13 +33,10 @@ public class Login {
     @Context
     UriInfo uri;
 
-    @Inject
-    SecurityService securityService;
-
     private final UserService userService;
 
     @Inject
-    public Login(UserService userService) {
+    public LoginResource(UserService userService) {
         this.userService = userService;
     }
 
@@ -69,7 +65,8 @@ public class Login {
             servletRequest.getSession(true).setAttribute("isLogin",true);
         }
 
-        return Response.ok(new Viewable("/broadcast/index.jsp")).build();
-       // return Response.seeOther(uri.getBaseUri()).build();
+
+        //return Response.ok(new Viewable("/broadcast/index.jsp")).build();
+        return Response.seeOther(uri.getBaseUri()).build();
     }
 }

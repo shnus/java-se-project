@@ -4,6 +4,7 @@ import com.google.inject.Module;
 import com.google.inject.servlet.ServletModule;
 import com.nusrat.java.drive_club.dao.DriverUserDao;
 import com.nusrat.java.drive_club.dao.UserDao;
+import com.nusrat.java.drive_club.service.Database;
 import com.nusrat.java.drive_club.service.DriverSecurityService;
 import com.nusrat.java.drive_club.service.DriverUserService;
 import com.nusrat.java.drive_club.service.interfaces.SecurityService;
@@ -25,7 +26,12 @@ public class MyJerseyGuiceServletContextListener extends JerseyGuiceServletConte
                 bind(SecurityService.class).to(DriverSecurityService.class);
                 bind(UserDao.class).to(DriverUserDao.class);
                 bind(UserService.class).to(DriverUserService.class);
+                bind(Database.class);
             }
         });
     }
+
+
+
+
 }

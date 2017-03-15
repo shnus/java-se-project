@@ -15,7 +15,7 @@ import java.net.URI;
  * Created by Nusrat on 2/11/2017.
  */
 @Path("/locale")
-public class Locale {
+public class LocaleChangeResource {
     @Context
     private HttpServletRequest servletRequest;
 

@@ -13,7 +13,7 @@ import javax.ws.rs.core.Response;
  * Created by Nusrat on 2/16/2017.
  */
 @Path("")
-public class Home {
+public class HomeResource {
 
     @GET
     @Produces(MediaType.TEXT_HTML)
