@@ -1,7 +1,7 @@
 package com.nusrat.java.drive_club.dao;
 
 import com.nusrat.java.drive_club.model.User;
-import com.nusrat.java.drive_club.service.DriverSecurityService;
+import com.nusrat.java.drive_club.service.SecurityServiceImpl;
 import org.jvnet.hk2.annotations.Service;
 
 import javax.annotation.ManagedBean;
@@ -16,15 +16,25 @@ import java.util.Optional;
 @Service
 public class DriverUserDao implements UserDao {
 
-    final DriverSecurityService securityService;
+    final SecurityServiceImpl securityService;
 
     @Inject
-    public DriverUserDao(DriverSecurityService securityService) {
+    public DriverUserDao(SecurityServiceImpl securityService) {
         this.securityService = securityService;
     }
 
     public Optional<User> getByLoginName(String loginName) {
         return dummy(loginName);
+    }
+
+    @Override
+    public boolean createUser(User user) {
+        return false;
+    }
+
+    @Override
+    public boolean isExist(String login) {
+        return false;
     }
 
     public Optional<User> dummy(String loginName) {
