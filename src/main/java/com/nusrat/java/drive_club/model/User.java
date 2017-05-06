@@ -5,7 +5,7 @@ import lombok.Value;
 
 import javax.security.auth.Subject;
 import java.security.Principal;
-import java.util.Date;
+import java.time.LocalDate;
 
 /**
  * Created by Nusrat on 2/12/2017.
@@ -16,9 +16,15 @@ public class User implements Principal {
     long id;
     String firstName;
     String lastName;
-    Date birthDate;
+    LocalDate birthDate;
+    String gender;
+    String bio;
+    String location;
     String loginName;
     String passwordHash;
+    String image_b64;
+
+
 
     public String getName() {
         return firstName+" "+lastName;

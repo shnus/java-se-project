@@ -9,7 +9,7 @@
 
 <script>
     $(document).ready(function() {
-        $("button").click(function () {
+        $("but").click(function () {
             $.post("broadcast",
                 {
                     name: "Donald Duck",
@@ -44,7 +44,7 @@
         <input type="submit" value="OK"/>
     </form>
 
-    <button>Send an HTTP POST request to a page and get the result back</button>
+    <button id="but">Send an HTTP POST request to a page and get the result back</button>
 
 </div>
 </body>

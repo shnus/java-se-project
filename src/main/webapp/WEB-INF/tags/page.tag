@@ -5,8 +5,17 @@
 <fmt:setBundle basename="i18n.home" var="home"/>
 <html>
 <head>
+    <c:url var="jqui" value="/static/css/jquery-ui.min.css"/>
+    <link rel="stylesheet" href="${jqui}" />
+
+    <c:url var="jquery" value="/static/js/jquery-3.1.1.min.js"/>
+    <script language="JavaScript" type="text/javascript" src="${jquery}"> </script>
+
     <c:url var="btsMain" value="/static/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${btsMain}" />
+
+    <c:url var="font" value="/static/css/font_awesome.min.css"/>
+    <link rel="stylesheet" href="${font}" />
 
     <c:url var="btsTheme" value="/static/css/bootstrap-theme.min.css"/>
     <link rel="stylesheet" href="${btsTheme}" />

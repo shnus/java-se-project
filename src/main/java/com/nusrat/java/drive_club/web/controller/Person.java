@@ -17,6 +17,7 @@ public class Person implements Serializable
         this.input = input;
     }
     public String input;
+    public String output;
 
     public String getInput() {
         return input;

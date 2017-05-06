@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 @Service
 @Resource
 @ManagedBean
-public class DriverSecurityService implements SecurityService {
+public class SecurityServiceImpl implements SecurityService {
 
     @Override
     public String encrypt(String password) {

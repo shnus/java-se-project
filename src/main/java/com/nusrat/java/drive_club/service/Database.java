@@ -13,7 +13,7 @@ import java.sql.SQLException;
 @ManagedBean
 public class Database {
 
-    public Database(){
+    private Database(){
         createPool();
     }
 
@@ -21,7 +21,7 @@ public class Database {
 
     private static void createPool() {
         basicDataSource = new BasicDataSource();
-        basicDataSource.setUrl("jdbc:postgresql://localhost:5432/postgres");
+        basicDataSource.setUrl("jdbc:postgresql://localhost:5432/drive_club");
         basicDataSource.setUsername("nusrat");
         basicDataSource.setPassword("5555");
 

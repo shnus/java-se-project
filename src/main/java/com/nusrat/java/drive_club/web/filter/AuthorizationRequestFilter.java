@@ -32,7 +32,7 @@ public class AuthorizationRequestFilter implements ContainerRequestFilter {
         String baseUri = requestContext.getUriInfo().getBaseUri().toString();
         String path = requestContext.getUriInfo().getPath();
         System.out.println(path);
-        if(!path.startsWith("login")&& !path.startsWith("locale") && !isLoggedIn){
+        if(!path.startsWith("login")&& !path.startsWith("locale")&& !path.startsWith("logon") && !isLoggedIn){
             requestContext.abortWith(Response.seeOther(URI.create(baseUri+"login")).build());
         }
         /*
